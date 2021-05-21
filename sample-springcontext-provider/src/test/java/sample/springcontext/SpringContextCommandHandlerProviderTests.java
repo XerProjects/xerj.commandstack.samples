@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import io.github.xerprojects.xerj.commandstack.CommandHandler;
+import sample.springcontext.SpringContextCommandHandlerProvider.SpringDuplicateCommandHandlerFoundException;
 import sample.springcontext.entities.TestCommand;
 import sample.springcontext.entities.TestCommandHandler;
 import sample.springcontext.entities.springconfigs.BeanConfig;

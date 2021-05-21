@@ -1,4 +1,4 @@
-package sample.springcontext;
+package sample.springboot.providers;
 
 import java.util.Optional;
 
@@ -53,7 +53,7 @@ public class SpringContextCommandHandlerProvider implements CommandHandlerProvid
         }
 
         if (handlerBeanNames.length > 1) {
-            throw new SpringDuplicateCommandHandlerFoundException(commandType, 
+            throw new SpringDuplicateCommandHandlerFoundException(commandType,
                 "Multiple command handlers that handle " + commandType + 
                 " have been detected by Spring Application Context.");
         }

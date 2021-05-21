@@ -18,8 +18,8 @@
 		<java.version>15</java.version>
 	</properties>
 	<dependencies>
-    <dependency>
-		<groupId>io.github.xerprojects</groupId>
+    	<dependency>
+			<groupId>io.github.xerprojects</groupId>
 			<artifactId>xerj.commandstack</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
