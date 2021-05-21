@@ -1,0 +1,16 @@
+package sample.springcontext.entities.springconfigs;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import io.github.xerprojects.xerj.commandstack.CommandHandler;
+import sample.springcontext.entities.TestCommand;
+import sample.springcontext.entities.TestCommandHandler;
+
+@Configuration
+public class BeanConfig {
+    @Bean
+    public CommandHandler<TestCommand> getTestCommandHandler() {
+        return new TestCommandHandler();  
+    }
+}

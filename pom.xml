@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>io.github.xerprojects</groupId>
+    <artifactId>xerj.parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <groupId>io.github.xerprojects</groupId>
+  <artifactId>xerj.commandstack.samples</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>xerj.commandstack.samples</name>
+
+  <modules>
+    <module>sample-guice-provider</module>
+    <module>sample-springcontext-provider</module>
+    <module>sample-springboot-usage</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <id>snapshots</id>
+      <repositories>
+        <repository>
+          <id>ossrh</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+</project>
