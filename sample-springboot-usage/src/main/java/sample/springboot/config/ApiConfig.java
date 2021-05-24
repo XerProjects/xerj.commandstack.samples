@@ -33,11 +33,8 @@ import sample.springboot.providers.SpringContextCommandHandlerProvider;
 public class ApiConfig {
 
     private static final Logger DISPATCHER_LOGGER = LoggerFactory.getLogger(CommandStackDispatcher.class);
-	private final ObjectMapper objectMapper;
-
-    public ApiConfig(ObjectMapper objectMapper) {
-		this.objectMapper = objectMapper;
-    }
+	private static final ObjectMapper OBJECT_MAPPER = 
+        new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
     @Bean
     @Primary
@@ -65,9 +62,9 @@ public class ApiConfig {
         try {
 			DISPATCHER_LOGGER.warn("Unhandled command:{}{}",
                 System.lineSeparator(),
-                objectMapper.enable(SerializationFeature.INDENT_OUTPUT).writeValueAsString(command));
+                OBJECT_MAPPER.writeValueAsString(command));
 		} catch (JsonProcessingException e) {
-			DISPATCHER_LOGGER.warn("Exception occurred while trying to serialize command.", e);
+			DISPATCHER_LOGGER.warn("Unexpected exception occurred while trying to serialize command.", e);
 		}
     }
 }
