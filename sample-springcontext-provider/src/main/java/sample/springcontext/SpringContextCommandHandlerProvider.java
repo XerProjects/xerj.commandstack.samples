@@ -9,6 +9,8 @@ import io.github.xerprojects.xerj.commandstack.CommandHandler;
 import io.github.xerprojects.xerj.commandstack.CommandHandlerProvider;
 
 /**
+ * Command handler provider implementation that gets its command handler instances
+ * from Spring's {@link ApplicationContext}.
  * 
  * @author Joel Jeremy Marquez
  */
@@ -23,7 +25,7 @@ public class SpringContextCommandHandlerProvider implements CommandHandlerProvid
     public SpringContextCommandHandlerProvider(ApplicationContext appContext) {
 
         if (appContext == null) {
-            throw new IllegalArgumentException("Spring application context type must not be null.");
+            throw new IllegalArgumentException("Spring application context must not be null.");
         }
 
         this.appContext = appContext;
