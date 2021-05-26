@@ -1,6 +1,8 @@
 package sample.guice.modules;
 
 import java.util.concurrent.Executors;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Injector;
@@ -19,6 +21,7 @@ import sample.guice.commands.PongCommand;
 import sample.guice.commands.PongCommandHandler;
 
 public class AppModule extends AbstractModule {
+
     @Override
     protected void configure() {
         bind(new TypeLiteral<CommandHandler<PingCommand>>(){}).to(PingCommandHandler.class);
@@ -33,12 +36,21 @@ public class AppModule extends AbstractModule {
         // return new CommandStackDispatcher(commandHandlerProvider);
         
         return new AsyncCommandDispatcher(
-            new CommandStackDispatcher(commandHandlerProvider),
+            new CommandStackDispatcher(commandHandlerProvider, AppModule::logUnhandledCommand),
             Executors.newWorkStealingPool());
     }
 
     @Provides
     public CommandHandlerProvider commandHandlerProvider(Injector injector) {
         return new GuiceCommandHandlerProvider(injector);
+    }
+
+    private static final Logger DISPATCHER_LOGGER = 
+        Logger.getLogger(CommandStackDispatcher.class.getName());
+
+    private static <TCommand> void logUnhandledCommand(TCommand command) {
+        DISPATCHER_LOGGER.log(Level.WARNING, 
+            "No command handler found for command of type {0}.", 
+            command.getClass());
     }
 }

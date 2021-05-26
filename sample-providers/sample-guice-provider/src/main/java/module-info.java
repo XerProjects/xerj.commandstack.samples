@@ -9,6 +9,7 @@ module sample.guice {
     requires failureaccess;
     requires aopalliance;
 
+    exports sample.guice;
     exports sample.guice.commands;
     exports sample.guice.modules;
 }

@@ -2,9 +2,12 @@ package sample.springcontext.commands;
 
 import java.util.logging.Logger;
 
+import org.springframework.stereotype.Component;
+
 import io.github.xerprojects.xerj.commandstack.CommandDispatcher;
 import io.github.xerprojects.xerj.commandstack.CommandHandler;
 
+@Component
 public class PongCommandHandler implements CommandHandler<PongCommand> {
 
 	private static final Logger LOGGER = Logger.getLogger(PongCommandHandler.class.getName());

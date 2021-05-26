@@ -10,13 +10,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import io.github.xerprojects.xerj.commandstack.CommandDispatcher;
-import io.github.xerprojects.xerj.commandstack.CommandHandler;
 import io.github.xerprojects.xerj.commandstack.CommandHandlerProvider;
 import io.github.xerprojects.xerj.commandstack.dispatchers.CommandStackDispatcher;
 import io.github.xerprojects.xerj.commandstack.dispatchers.async.AsyncCommandDispatcher;
@@ -24,12 +21,7 @@ import sample.springboot.Application;
 import sample.springboot.providers.SpringContextCommandHandlerProvider;
 
 @Configuration
-@ComponentScan(
-    basePackageClasses = Application.class,
-    includeFilters = @Filter(
-        type = FilterType.ASSIGNABLE_TYPE,
-        classes = CommandHandler.class
-))
+@ComponentScan(basePackageClasses = Application.class)
 public class ApiConfig {
 
     private static final Logger DISPATCHER_LOGGER = LoggerFactory.getLogger(CommandStackDispatcher.class);
