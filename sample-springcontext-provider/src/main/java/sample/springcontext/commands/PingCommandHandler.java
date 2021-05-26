@@ -4,17 +4,13 @@ import java.util.logging.Logger;
 
 import io.github.xerprojects.xerj.commandstack.CommandHandler;
 
-public class PingComandHandler implements CommandHandler<PingCommand> {
+public class PingCommandHandler implements CommandHandler<PingCommand> {
 
-    private final Logger logger;
-
-	public PingComandHandler(Logger logger) {
-		this.logger = logger;
-    }
+    private static final Logger LOGGER = Logger.getLogger(PingCommandHandler.class.getName());
 
 	@Override
 	public void handle(PingCommand command) {
-		logger.info("PING!");
+		LOGGER.info("PING!");
 	}
     
 }

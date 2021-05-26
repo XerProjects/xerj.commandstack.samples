@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
   <groupId>io.github.xerprojects</groupId>
-	<artifactId>sample-springboot-usage</artifactId>
+	<artifactId>sample-app-springboot</artifactId>
 	<version>0.0.1</version>
-	<name>sample-springboot-usage</name>
-	<description>Demo Spring Boot xerj.commandstack usage.</description>
+	<name>sample-app-springboot</name>
+	<description>Demo Spring Boot using xerj.commandstack.</description>
   	<url>https://github.com/XerProjects/xerj.commandstack.samples</url>
 	<properties>
 		<java.version>15</java.version>

@@ -6,7 +6,7 @@
   <parent>
 		<groupId>io.github.xerprojects</groupId>
 		<artifactId>xerj.commandstack.samples</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
   <groupId>io.github.xerprojects</groupId>
   <artifactId>sample-springcontext-provider</artifactId>
@@ -52,7 +52,6 @@
         <configuration>
           <!-- Required for spring test to be able to access modules -->
           <argLine>
-            @{surefire.jacoco.args}
             --add-exports sample.springcontext/sample.springcontext.entities=spring.beans
             --add-exports sample.springcontext/sample.springcontext.entities.springconfigs=spring.beans,spring.context
             --add-exports sample.springcontext/sample.springcontext.entities.other=spring.beans

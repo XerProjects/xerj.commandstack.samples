@@ -10,8 +10,11 @@ import io.github.xerprojects.xerj.commandstack.CommandDispatcher;
 import io.github.xerprojects.xerj.commandstack.CommandHandlerProvider;
 import io.github.xerprojects.xerj.commandstack.dispatchers.CommandStackDispatcher;
 import io.github.xerprojects.xerj.commandstack.dispatchers.async.AsyncCommandDispatcher;
+import sample.springcontext.App;
+import sample.springcontext.ScanCommandHandlers;
 import sample.springcontext.SpringContextCommandHandlerProvider;
 
+@ScanCommandHandlers(App.class)
 @Configuration
 public class BeanConfig {
     @Bean
