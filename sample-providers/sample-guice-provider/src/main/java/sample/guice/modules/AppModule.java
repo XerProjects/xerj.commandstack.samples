@@ -33,7 +33,7 @@ public class AppModule extends AbstractModule {
         // Decorated with async command dispatcher.
 
         // If async command dispatch is not needed, you can just:
-        // return new CommandStackDispatcher(commandHandlerProvider);
+        // return new CommandStackDispatcher(commandHandlerProvider, AppModule::logUnhandledCommand);
         
         return new AsyncCommandDispatcher(
             new CommandStackDispatcher(commandHandlerProvider, AppModule::logUnhandledCommand),

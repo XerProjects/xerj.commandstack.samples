@@ -21,6 +21,10 @@ public class AppModule {
 
     @Provides
     public CommandDispatcher commandDispatcher(CommandHandlerProvider commandHandlerProvider) {
+
+        // If async command dispatch is not needed, you can just:
+        // return new CommandStackDispatcher(commandHandlerProvider, AppModule::logUnhandledCommand);
+
         return new AsyncCommandDispatcher(
             new CommandStackDispatcher(commandHandlerProvider, AppModule::logUnhandledCommand), 
             Executors.newWorkStealingPool());

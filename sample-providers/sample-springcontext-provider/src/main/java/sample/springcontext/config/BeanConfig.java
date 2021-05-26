@@ -24,6 +24,10 @@ public class BeanConfig {
     
     @Bean
     public CommandDispatcher commandDispatcher(CommandHandlerProvider commandHandlerProvider) {
+
+        // If async command dispatch is not needed, you can just:
+        // return new CommandStackDispatcher(commandHandlerProvider, BeanConfig::logUnhandledCommand);
+
         return new AsyncCommandDispatcher(
             new CommandStackDispatcher(commandHandlerProvider, BeanConfig::logUnhandledCommand),
             Executors.newWorkStealingPool()
