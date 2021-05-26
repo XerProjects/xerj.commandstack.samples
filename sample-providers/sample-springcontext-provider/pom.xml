@@ -7,6 +7,7 @@
 		<groupId>io.github.xerprojects</groupId>
 		<artifactId>xerj.commandstack.samples</artifactId>
 		<version>0.0.1</version>
+    <relativePath>../../pom.xml</relativePath>
 	</parent>
   <groupId>io.github.xerprojects</groupId>
   <artifactId>sample-springcontext-provider</artifactId>

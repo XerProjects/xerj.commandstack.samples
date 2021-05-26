@@ -13,9 +13,9 @@
   <name>xerj.commandstack.samples</name>
   <modules>
     <module>sample-app-springboot</module>
-    <module>sample-guice-provider</module>
-    <module>sample-springcontext-provider</module>
-    <module>sample-dagger-provider</module>
+    <module>sample-providers/sample-guice-provider</module>
+    <module>sample-providers/sample-springcontext-provider</module>
+    <module>sample-providers/sample-dagger-provider</module>
   </modules>
 
   <properties>

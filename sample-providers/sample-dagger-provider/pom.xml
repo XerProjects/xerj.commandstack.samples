@@ -5,6 +5,7 @@
     <artifactId>xerj.commandstack.samples</artifactId>
     <groupId>io.github.xerprojects</groupId>
     <version>0.0.1</version>
+    <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <groupId>io.github.xerprojects</groupId>
@@ -12,7 +13,7 @@
   <version>0.0.1</version>
 
   <name>sample-dagger-provider</name>
-  <description>XerJ Command Stack's CommandHandlerProvider implementation that utilizes Guice.</description>
+  <description>XerJ Command Stack's CommandHandlerProvider implementation that utilizes Dagger.</description>
   <url>https://github.com/XerProjects/xerj.commandstack.samples</url>
 
   <properties>

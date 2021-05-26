@@ -21,6 +21,8 @@ public class App {
         commandDispatcher.send(new PongCommand());
     }
 
+    // To run, first you need to compile in order 
+    // for generated Dagger classes to be created.
     public static void main( String[] args ) {
         App app = DaggerAppComponent.create().app();
         app.run();
