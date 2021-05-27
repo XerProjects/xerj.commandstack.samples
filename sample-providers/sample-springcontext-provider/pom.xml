@@ -18,6 +18,7 @@
   <url>https://github.com/XerProjects/xerj.commandstack.samples</url>
   
   <dependencies>
+    <!-- Required by spring  -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
